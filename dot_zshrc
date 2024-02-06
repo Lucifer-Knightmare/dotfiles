@@ -144,4 +144,5 @@ alias gp='git push origin master'
 # eval "$(starship init zsh)"
 
 # Exec Some Random Stuffs
-eval pfetch
+# eval pfetch
+eval macchina
