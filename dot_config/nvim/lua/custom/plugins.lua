@@ -24,7 +24,19 @@ local plugins = {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
+		-- dependencies = { "HiPhish/nvim-ts-rainbow2" },
 		opts = overrides.treesitter,
+		-- config = function()
+		-- 	require("nvim-treesitter.configs").setup({
+		-- 		highlight = { enable = true },
+		-- 		rainbow = {
+		-- 			enable = true,
+		-- 			extended_mode = true,
+		-- 			query = "rainbow-parens",
+		-- 			strategy = require("ts-rainbow").strategy.global,
+		-- 		},
+		-- 	})
+		-- end,
 	},
 
 	{
@@ -401,10 +413,10 @@ local plugins = {
 		lazy = false,
 	},
 
-  -- {
-  --   'dccsillag/magma-nvim',
-  --   build = ':UpdateRemotePlugins'
-  -- }
+  {
+    "https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git",
+    lazy = false,
+  }
 
 	-- To make a plugin not be loaded
 	-- {
