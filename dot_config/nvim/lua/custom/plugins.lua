@@ -413,10 +413,19 @@ local plugins = {
 		lazy = false,
 	},
 
-  {
-    "https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git",
-    lazy = false,
-  }
+	{
+		"https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git",
+		lazy = false,
+		-- config = function()
+		-- 	require("rainbow-delimiters.setup").setup({
+		-- 		query = {
+		-- 			[""] = "rainbow-delimiters",
+		-- 			-- lua = "rainbow-blocks",
+		-- 			-- latex = "rainbow-blocks",
+		-- 		},
+		-- 	})
+		-- end,
+	},
 
 	-- To make a plugin not be loaded
 	-- {
