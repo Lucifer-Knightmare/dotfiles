@@ -553,6 +553,12 @@ local plugins = {
 		},
 	},
 
+	{
+		"stevearc/dressing.nvim",
+    lazy = false,
+		opts = {},
+	},
+
 	-- To make a plugin not be loaded
 	-- {
 	--   "NvChad/nvim-colorizer.lua",
