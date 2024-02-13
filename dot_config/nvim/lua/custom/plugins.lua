@@ -555,8 +555,20 @@ local plugins = {
 
 	{
 		"stevearc/dressing.nvim",
-    lazy = false,
+		lazy = false,
 		opts = {},
+	},
+
+	{
+		"m-demare/hlargs.nvim",
+		lazy = false,
+	},
+
+	{
+		"j-hui/fidget.nvim",
+		opts = {
+			-- options
+		},
 	},
 
 	-- To make a plugin not be loaded
