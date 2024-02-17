@@ -14,6 +14,11 @@ local plugins = {
 			require("plugins.configs.lspconfig")
 			require("custom.configs.lspconfig")
 		end, -- Override to setup mason-lspconfig
+		opts = {
+			inlay_hints = {
+				enabled = true,
+			},
+		},
 	},
 
 	-- override plugin configs
@@ -26,17 +31,18 @@ local plugins = {
 		"nvim-treesitter/nvim-treesitter",
 		-- dependencies = { "HiPhish/nvim-ts-rainbow2" },
 		opts = overrides.treesitter,
-		-- config = function()
-		-- 	require("nvim-treesitter.configs").setup({
-		-- 		highlight = { enable = true },
-		-- 		rainbow = {
-		-- 			enable = true,
-		-- 			extended_mode = true,
-		-- 			query = "rainbow-parens",
-		-- 			strategy = require("ts-rainbow").strategy.global,
-		-- 		},
-		-- 	})
-		-- end,
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				highlight = { enable = true },
+				markid = { enable = true },
+				-- 		rainbow = {
+				-- 			enable = true,
+				-- 			extended_mode = true,
+				-- 			query = "rainbow-parens",
+				-- 			strategy = require("ts-rainbow").strategy.global,
+				-- 		},
+			})
+		end,
 	},
 
 	{
@@ -562,14 +568,60 @@ local plugins = {
 	{
 		"m-demare/hlargs.nvim",
 		lazy = false,
+		config = function()
+			require("hlargs").setup({
+				hl_priority = 9999999,
+			})
+		end,
 	},
+
+	{ "David-Kunz/markid", lazy = false },
 
 	{
 		"j-hui/fidget.nvim",
+		lazy = false,
 		opts = {
 			-- options
 		},
 	},
+
+	-- {
+	-- 	"wookayin/semshi",
+	-- 	build = ":UpdateRemotePlugins",
+	-- 	version = "*", -- Recommended to use the latest release
+	-- 	init = function() -- example, skip if you're OK with the default config
+	-- 		vim.g["semshi#error_sign"] = false
+	-- 	end,
+	-- 	config = function()
+	-- 		-- any config or setup that would need to be done after plugin loading
+	-- 	end,
+	-- },
+
+	-- { "mfussenegger/nvim-dap", lazy = false },
+	--
+	-- {
+	-- 	{
+	-- 		"rcarriga/nvim-dap-ui",
+	-- 		keys = {
+	-- 			{
+	-- 				"<leader>dut",
+	-- 				function()
+	-- 					local render = require("dapui.config").render
+	-- 					render.max_type_length = (render.max_type_length == nil) and 0 or nil
+	-- 					require("dapui").update_render(render)
+	-- 				end,
+	-- 				desc = "Toggle types",
+	-- 			},
+	--        {
+	--          "<leader>dt",
+	--          function()
+	--            require("dapui").toggle()
+	--          end,
+	--          desc = "Toggle DAP UI",
+	--        }
+	-- 		},
+	-- 	},
+	-- },
 
 	-- To make a plugin not be loaded
 	-- {

@@ -125,6 +125,7 @@ alias zshconfig="geany ~/.zshrc"
 alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 # eza
+alias ls='eza'
 alias l='eza -lh'
 alias ll='eza -lah'
 alias la='eza -A'
@@ -140,9 +141,13 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
-
 # Exec Startship
 # eval "$(starship init zsh)"
+
+# Exec zoxide
+eval "$(zoxide init zsh)"
+# zoxide
+alias cd='z'
 
 # Exec Some Random Stuffs
 # eval pfetch
