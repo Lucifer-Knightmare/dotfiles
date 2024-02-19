@@ -4,7 +4,8 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "rust_analyzer", "pyright", "ruff_lsp", "julials", "texlab", "pylyzer" }
+local servers =
+	{ "html", "cssls", "tsserver", "clangd", "rust_analyzer", "ruff_lsp", "julials", "texlab", "pylsp" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
@@ -13,5 +14,24 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
---
+-- Put it here???
+vim.diagnostic.config({
+	virtual_text = false,
+})
+
+vim.diagnostic.config({ virtual_lines = true })
+
+
+-- Another one?
+-- Not Here...
+-- vim.api.nvim_create_autocmd("WinEnter", {
+--     callback = function()
+--         local floating = vim.api.nvim_win_get_config(0).relative ~= ""
+--         vim.diagnostic.config({
+--             virtual_text = floating,
+--             virtual_lines = not floating,
+--         })
+--     end,
+-- })
+
 -- lspconfig.pyright.setup { blabla}

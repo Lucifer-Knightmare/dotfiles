@@ -585,17 +585,45 @@ local plugins = {
 		},
 	},
 
-	-- {
-	-- 	"wookayin/semshi",
-	-- 	build = ":UpdateRemotePlugins",
-	-- 	version = "*", -- Recommended to use the latest release
-	-- 	init = function() -- example, skip if you're OK with the default config
-	-- 		vim.g["semshi#error_sign"] = false
-	-- 	end,
-	-- 	config = function()
-	-- 		-- any config or setup that would need to be done after plugin loading
-	-- 	end,
-	-- },
+	{
+		"nvim-neorg/neorg",
+		build = ":Neorg sync-parsers",
+		lazy = false, -- specify lazy = false because some lazy.nvim distributions set lazy = true by default
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("neorg").setup({
+				-- tag = "*",
+				-- configuration here
+				load = {
+					["core.defaults"] = {},
+					["core.dirman"] = {
+						config = {
+							workspaces = {
+								work = "~/notes/work",
+								home = "~/notes/home",
+								masters = "~/notes/masters",
+								personal_research = "~/notes/personal_research",
+							},
+						},
+					},
+					["core.concealer"] = {
+						config = {
+							folds = false,
+							-- icon_present = "basic",
+						},
+					},
+				},
+			})
+		end,
+	},
+
+	{
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    lazy = false,
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	},
 
 	-- { "mfussenegger/nvim-dap", lazy = false },
 	--
