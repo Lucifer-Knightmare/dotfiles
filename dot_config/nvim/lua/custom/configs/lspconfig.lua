@@ -5,7 +5,7 @@ local lspconfig = require("lspconfig")
 
 -- if you just want default config for the servers then put them in a table
 local servers =
-	{ "html", "cssls", "tsserver", "clangd", "rust_analyzer", "ruff_lsp", "julials", "texlab", "pylsp" }
+	{ "html", "cssls", "tsserver", "clangd", "rust_analyzer", "julials", "texlab", "pylsp", "matlab_ls" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({

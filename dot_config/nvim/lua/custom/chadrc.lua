@@ -5,11 +5,16 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "gatekeeper",
-  theme_toggle = { "gatekeeper", "one_light" },
+  theme = "rxyhn",
+  theme_toggle = { "rxyhn", "one_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
+
+  statusline = {
+    theme = "default",
+    separator_style = "arrow"
+  }
 }
 
 M.plugins = "custom.plugins"

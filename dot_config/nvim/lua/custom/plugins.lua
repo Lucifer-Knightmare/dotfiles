@@ -13,12 +13,37 @@ local plugins = {
 		config = function()
 			require("plugins.configs.lspconfig")
 			require("custom.configs.lspconfig")
+			-- require("lsp-inlayhints").setup()
 		end, -- Override to setup mason-lspconfig
 		opts = {
 			inlay_hints = {
 				enabled = true,
 			},
 		},
+	},
+
+	-- lsp-inlayhints!
+	{
+		"lvimuser/lsp-inlayhints.nvim",
+    lazy = false,
+		config = function()
+			require("lsp-inlayhints").setup({
+        enabled_at_startup = true,
+      })
+			-- vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+			-- vim.api.nvim_create_autocmd("LspAttach", {
+			-- 	group = "LspAttach_inlayhints",
+			-- 	callback = function(args)
+			-- 		if not (args.data and args.data.client_id) then
+			-- 			return
+			-- 		end
+			--
+			-- 		local bufnr = args.buf
+			-- 		local client = vim.lsp.get_client_by_id(args.data.client_id)
+			-- 		require("lsp-inlayhints").on_attach(client, bufnr)
+			-- 	end,
+			-- })
+		end,
 	},
 
 	-- override plugin configs
@@ -619,7 +644,7 @@ local plugins = {
 
 	{
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    lazy = false,
+		lazy = false,
 		config = function()
 			require("lsp_lines").setup()
 		end,

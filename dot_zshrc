@@ -141,6 +141,9 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
+# MATLAB
+alias matlab='~/local_software/MATLAB/R2023b/bin/matlab'
+
 # Exec Startship
 # eval "$(starship init zsh)"
 
@@ -151,4 +154,6 @@ alias cd='z'
 
 # Exec Some Random Stuffs
 # eval pfetch
-eval "macchina -t Lithium"
+# eval "macchina -t Lithium"
+# pfetch/macchina alternative: fastfetch
+eval "fastfetch"

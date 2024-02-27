@@ -18,12 +18,12 @@ M.on_attach = function(client, bufnr)
 	end
 
 	-- add this here?
-	if client.server_capabilities.inlayHintProvider then
-		vim.g.inlay_hints_visible = true
-		vim.lsp.inlay_hint(bufnr, true)
-	else
-		print("no inlay hints available")
-	end
+	-- if client.server_capabilities.inlayHintProvider then
+	-- 	vim.g.inlay_hints_visible = true
+	-- 	vim.lsp.inlay_hint(bufnr, true)
+	-- else
+	-- 	print("no inlay hints available")
+	-- end
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
