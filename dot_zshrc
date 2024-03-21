@@ -152,6 +152,10 @@ eval "$(zoxide init zsh)"
 # zoxide
 alias cd='z'
 
+# Rust Mirrors
+export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+
 # Exec Some Random Stuffs
 # eval pfetch
 # eval "macchina -t Lithium"
