@@ -144,9 +144,6 @@ alias gp='git push origin master'
 # MATLAB
 alias matlab='~/local_software/MATLAB/R2023b/bin/matlab'
 
-# Exec Startship
-# eval "$(starship init zsh)"
-
 # Exec zoxide
 eval "$(zoxide init zsh)"
 # zoxide
@@ -160,4 +157,7 @@ export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
 # eval pfetch
 # eval "macchina -t Lithium"
 # pfetch/macchina alternative: fastfetch
-eval "fastfetch"
+# eval "fastfetch"
+
+# starship
+eval "$(starship init zsh)"

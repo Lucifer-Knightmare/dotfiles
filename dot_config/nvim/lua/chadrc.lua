@@ -2,7 +2,7 @@
 local M = {}
 
 M.ui = {
-	theme = "material-darker",
+	theme = "ayu_dark",
 
 	hl_override = {
 		Comment = { italic = true },

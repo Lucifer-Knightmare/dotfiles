@@ -5,7 +5,7 @@ return {
 	lazy = true, -- enable lazy load
 	ft = "norg", -- lazy load on file type
 	cmd = "Neorg", -- lazy load on command
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim", "folke/zen-mode.nvim" },
 	config = function()
 		require("neorg").setup({
 			-- tag = "*",
@@ -15,11 +15,14 @@ return {
 				["core.dirman"] = {
 					config = {
 						workspaces = {
-							work = "~/notes/work",
-							home = "~/notes/home",
-							masters = "~/notes/masters",
-							personal_research = "~/notes/personal_research",
+							work = "~/Notes/Work",
+							home = "~/Notes/Home",
+							masters = "~/Notes/Masters",
+							personal_research = "~/Notes/Personal_Research",
+              learning = "~/Notes/Learning",
+							scratch = "~/Notes/Scratch",
 						},
+						default_workspace = "scratch",
 					},
 				},
 				["core.concealer"] = {
@@ -30,6 +33,18 @@ return {
 				},
 				["core.integrations.image"] = {},
 				["core.latex.renderer"] = {},
+				["core.integrations.treesitter"] = {},
+				["core.mode"] = {},
+				["core.queries.native"] = {},
+				["core.ui"] = {},
+				["core.presenter"] = {
+					config = { zen_mode = "zen-mode" },
+				},
+				["core.tempus"] = {},
+				-- ["core.journal"] = {},
+				["core.summary"] = {},
+				["core.export"] = {},
+				["core.export.markdown"] = {},
 			},
 		})
 	end,

@@ -9,6 +9,8 @@ local enable_providers = {
   -- and so on
 }
 
+-- <localleader> for neorg
+-- vim.g.maplocalleader = ","
 for _, plugin in pairs(enable_providers) do
   vim.g["loaded_" .. plugin] = nil
   vim.cmd("runtime " .. plugin)
@@ -16,3 +18,4 @@ end
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
+
