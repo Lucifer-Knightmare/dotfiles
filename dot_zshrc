@@ -142,7 +142,7 @@ alias gc='git commit -m'
 alias gp='git push origin master'
 
 # MATLAB
-alias matlab='~/local_software/MATLAB/R2023b/bin/matlab'
+alias matlab='~/local_software/MATLAB/R2024a/bin/matlab'
 
 # Exec zoxide
 eval "$(zoxide init zsh)"
