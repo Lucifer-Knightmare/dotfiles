@@ -150,17 +150,18 @@ eval "$(zoxide init zsh)"
 alias cd='z'
 
 # Rust Mirrors
-export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-# export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-# export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+# export RUSTUP_UPDATE_ROOT=https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup
+# export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 
 # Exec Some Random Stuffs
 # eval pfetch
 # eval "macchina -t Lithium"
 # pfetch/macchina alternative: fastfetch
 # eval "fastfetch"
-eval "rsftch"
+# eval "rsftch"
+eval "fastfetch -l Archcraft2"
 
 # starship
 eval "$(starship init zsh)"
